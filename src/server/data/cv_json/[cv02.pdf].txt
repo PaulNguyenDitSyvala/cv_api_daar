@@ -1,0 +1,55 @@
+{
+"filename":"cv02.pdf",
+"content":"
+robert smith
+robertsmith  @gmail.com  
+linkedin.com/in/robert-smith
+
+0123456789
+
+formation
+
+2018 licence d'informatique à sorbonne université
+paris vi ex-univ. pierre et marie curie
+en cours de 2ème année - objectif de poursuite en master
+
+2016 daeu b éq. baccalauréat scientifique
+maths/physique/chimie - mention bien
+
+2012 gestionnaire de petite ou moyenne structure
+afpa de nanterre - mention bien
+
+autodidacte: mes expériences de vie variées m'ont permis d'acquérir des connaissances très diverses avec leur lot de
+problématiques singulières. j'ai développé une endurance et une capacité à répondre aux difficultés de toutes natures.
+
+experiences professionnelles
+
+2014 à 2015 (7 mois) smart france ← technico-commercial
+   nouveau modèle smart de 2014
+   mondial de l'automobile 2014 et autres évènements
+
+2010 à 2014 (4 ans) alliance renault/nissan ←  technico-commercial
+   gammes de véhicules particuliers et électriques
+   mondial de l'automobile 2010
+   essais presse à travers toute la france
+
+2009 à 2010 (7 mois) guess (montréal - canada)
+   merchandising et vente au détail
+
+compétences
+
+langages : java / c / c++ / python / golang / haskell / ocaml
+db : nosql
+
+etudiant en licence
+d'informatique
+
+à sorbonne université sciences
+ex-université pierre et marie curie
+
+anglais courant
+
+mailto:johndoe@gmail.com
+
+"
+}

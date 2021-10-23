@@ -1,0 +1,57 @@
+{
+"filename":"cv01.pdf",
+"content":"
+John Doe
+
+Johndoe@gmail.com
+linkedin.com/in/john-doe
+
+0123456789
+
+FORMATION
+
+2018 Licence d'Informatique à Sorbonne université
+PARIS VI ex-Univ. Pierre et Marie Curie
+En cours de 2ème année - Objectif de poursuite en Master
+
+2016 DAEU B éq. Baccalauréat Scientifique
+Maths/Physique/Chimie - Mention Bien
+
+2012 Gestionnaire de Petite ou Moyenne Structure
+AFPA de Nanterre - Mention Bien
+
+Autodidacte: mes expériences de vie variées m'ont permis d'acquérir des connaissances très diverses avec leur lot de
+problématiques singulières. J'ai développé une endurance et une capacité à répondre aux difficultés de toutes natures.
+
+EXPERIENCES PROFESSIONNELLES
+
+2014 à 2015 (7 mois) SMART France ← Technico-commercial
+   Nouveau modèle smart de 2014
+   Mondial de l'Automobile 2014 et autres évènements
+
+2010 à 2014 (4 ans) Alliance Renault/Nissan ←  Technico-commercial
+   Gammes de véhicules particuliers et électriques
+   Mondial de l'Automobile 2010
+   Essais presse à travers toute la France
+
+2009 à 2010 (7 mois) GUESS (Montréal - Canada)
+   Merchandising et vente au détail
+
+Intérêts particuliers / hobbies
+
+Défense : Passionné par la défense. Je souhaite m’investir professionnellement dans ce domaine.
+
+Sport : les sports de combats, que je pratique très régulièrement, sont importants pour moi.
+
+Etudiant en Licence
+d'Informatique
+
+à Sorbonne Université Sciences
+ex-Université Pierre et Marie Curie
+
+Anglais courant
+
+mailto:Johndoe@gmail.com
+
+"
+}
