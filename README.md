@@ -44,8 +44,3 @@ sudo apt install openjdk-11-jdk
 
 
 
-
-
-
-json-simple-1.1.1.jar
-https://code.google.com/archive/p/json-simple/downloads

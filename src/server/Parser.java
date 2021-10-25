@@ -1,5 +1,4 @@
 
-
 // Importing java input/output classes
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,10 +24,10 @@ public class Parser {
 
 
 	// VARIABLES
-	private final String inputDirectory = "../data/cv/";
-	private final String inputFile;
-	private final String inputFullPath;
-	private final String outputDirectory = "../data/cv_json/";
+	private final String inputDirectory = "./data/cv/";
+	private String inputFile;
+	private String inputFullPath;
+	private final String outputDirectory = "./data/cv_json/";
 
 	// CONSTRUCTOR
 	public Parser(String file){
@@ -78,7 +77,7 @@ public class Parser {
 		ArrayList<String> words = new ArrayList<String>();
 		String regex1 = "^[^a-zA-Z0-9]$";
 		String regex2 = "^[0-9]$";
-		String regex3 = "^(de|des|et|un|une|en|le|les|j'ai)$";
+		String regex3 = "^(de|des|et|un|une|en|le|les|j'ai|je)$";
 
 		// normalizing text
 		content = content.toLowerCase();
@@ -137,6 +136,13 @@ public class Parser {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+	}
+
+
+	// change the targeted inputfile
+	public void setNewFile(String file){
+		this.inputFile = file;
+		this.inputFullPath = (this.inputDirectory + this.inputFile);
 	}
 
 

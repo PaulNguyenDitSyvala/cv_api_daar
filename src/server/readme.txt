@@ -4,11 +4,14 @@ tika-app-2.1.0.jar
 download at :
 https://tika.apache.org/download.html
 
-for Parser :
+compilation :
+javac -Xlint -cp tika-app-2.1.0.jar *.java
 
-javac -Xlint -cp tika-app-2.1.0.jar Parser.java 
-java -cp tika-app-2.1.0.jar Parser.java
+execution :
+javac -Xlint -cp tika-app-2.1.0.jar:. Main
+(remplacer 'Main' par la classe qui contient le static main) 
+
 
 TODO:
-injecter les fichiers généré par le parser dans elsticsearch
-Les fichiers générés sont dans cv_api_daar/src/server/data/cv_json/
+injecter les JSON généré par le parser dans elsticsearch
+Les fichiers sont dans cv_api_daar/src/server/data/cv_json/
