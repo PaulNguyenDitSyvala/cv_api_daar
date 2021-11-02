@@ -10,26 +10,31 @@ import org.springframework.data.elasticsearch.annotations.Field;
 public class Cv {
 
     @Id
-    private String id;
+    private String filename;
     private String content;
-
-    public Cv(String id, String content){
-    	this.id = id;
+    
+    public Cv(String content, String filename){
     	this.content = content;
+    	this.filename = filename;
     }
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
+    
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
+    }
+    
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+    
+    public String toString(){
+    	return "{" + this.filename + " - " + this.content + "}";
     }
 }

@@ -7,21 +7,17 @@ import java.util.List;
 
 // Business rules layer
 @Service
-public class SearchService {
+public class CvService {
 
     @Autowired
     private CvRepository cvRepository;
-    
-    public List<Cv> searchCvId(String id) {
-        return cvRepository.search(id);
-    }
-    
-    public List<Cv> searchCvContent(String content){
+
+    public List<Cv> searchContent(String content){
     	return cvRepository.searchContent(content);
     }
     
-    public List<Cv> searchCvContentContains(String content){
-    	return cvRepository.searchContentContains(content);
+    public List<Cv> searchFilename(String filename) {
+        return cvRepository.searchFilename(filename);
     }
 	
     public Cv save(Cv cv) {

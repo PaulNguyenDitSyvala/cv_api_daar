@@ -9,15 +9,14 @@ import org.springframework.stereotype.Repository;
 // data access
 @Repository
 public interface CvRepository extends ElasticsearchRepository<Cv, String> {
-    //@Query("{\"bool\": {\"must\": [{\"fuzzy\": {\"title\": \"?0\"}}]}}")
-    @Query("{\"bool\": {\"must\": [{\"term\": {\"id\": \"?0\"}}]}}")
-    List<Cv> search(String id);
     
-    @Query("{\"bool\": {\"must\": [{\"term\": {\"content\": \"?0\"}}]}}")    
+    //@Query("{\"bool\": {\"must\": [{\"fuzzy\": {\"title\": \"?0\"}}]}}")
+    //@Query("{\"bool\": {\"must\": [{\"term\": {\"content\": \"?0\"}}]}}")    
+    @Query("{\"bool\": {\"must\": [{\"match\": {\"content\": \"?0\"}}]}}")    
     List<Cv> searchContent(String content);
     
-    @Query("{\"bool\": {\"must\": [{\"match\": {\"content\": \"?0\"}}]}}")    
-    List<Cv> searchContentContains(String content);    
+    @Query("{\"bool\": {\"must\": [{\"term\": {\"filename\": \"?0\"}}]}}")
+    List<Cv> searchFilename(String filename);
     
     Cv save(Cv cv);
     

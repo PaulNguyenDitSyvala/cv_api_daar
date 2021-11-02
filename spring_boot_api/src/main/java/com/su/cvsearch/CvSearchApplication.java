@@ -11,5 +11,4 @@ public class CvSearchApplication {
     public static void main(String[] args) {
         SpringApplication.run(CvSearchApplication.class, args);
     }
-    
 }
