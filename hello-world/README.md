@@ -1,24 +1,23 @@
-# hello-world
+# Front-end application to upload CVs and search CV database 
 
 ## Project setup
+
+`https://cli.vuejs.org/guide/installation.html`
+
 ```
-npm install
+sudo apt install nodejs
+sudo apt install npm
+npm install -g @vue/cli
+npm update -g @vue/cli
 ```
 
-### Compiles and hot-reloads for development
+### Creating a new Vue project
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+vue create hello-world
 ```
 
-### Lints and fixes files
+### Running the project
 ```
-npm run lint
+vue serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
