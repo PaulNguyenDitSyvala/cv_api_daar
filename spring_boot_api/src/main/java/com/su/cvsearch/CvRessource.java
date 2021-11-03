@@ -63,8 +63,10 @@ public class CvRessource {
         	LOG.log(Level.INFO, ErrorMessage);
     	}
 	
-		
-
+	Parser parser = new Parser("");
+	parser.setNewFile(filename);
+	parser.makeJSON();
+	
         ResponseEntity entity = ResponseEntity.ok(null);
 //        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
 
