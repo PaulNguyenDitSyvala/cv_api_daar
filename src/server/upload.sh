@@ -1,8 +1,7 @@
+
+echo "Sending all CV(json) to elasticsearch"
 cd ./data/cv_json
-ls
-echo ""
 for file in *.json; do
-  #pwd
   name="${file%.json}"
   cd ../..
   echo "sending '$file' to elasticsearch..."

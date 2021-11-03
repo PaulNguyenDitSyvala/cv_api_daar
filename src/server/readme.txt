@@ -8,8 +8,10 @@ compilation :
 javac -Xlint -cp tika-app-2.1.0.jar *.java
 
 execution :
-javac -Xlint -cp tika-app-2.1.0.jar:. Main
-(remplacer 'Main' par la classe qui contient le static main) 
+javac -Xlint -cp tika-app-2.1.0.jar:. ParserMain 
+java -cp tika-app-2.1.0.jar:. ParserMain "cv01.pdf" "cv02.pdf" "cv100.pdf" "cv101.pdf"
+
+
 
 
 TODO:
