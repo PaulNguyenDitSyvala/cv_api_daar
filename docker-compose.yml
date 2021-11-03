@@ -41,7 +41,15 @@ services:
       - elastic
     command: logstash -f /home/paul/Documents/daar/project2/git/cv_api_daar/spring_boot_api
 
-      
+  vue:
+    build: ./vuejs-frontend/
+    container_name: vue
+    networks:
+      - elastic
+    ports:
+      - 6058:6058
+    command: npm run serve
+
 volumes:
   data01:
     driver: local
