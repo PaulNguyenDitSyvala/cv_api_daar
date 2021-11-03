@@ -65,10 +65,14 @@ public class CvRessource {
 	
 	Parser parser = new Parser("");
 	parser.setNewFile(filename);
-	parser.makeJSON();
-	
-        ResponseEntity entity = ResponseEntity.ok(null);
-//        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
+	String s = parser.makeJSON();
+	String content = parser.getContent();
+	Cv newCv = new Cv(filename, content);
+        String testString = "testing response - " + new Date() + "\n" + newCv;
+        LOG.log(Level.INFO, testString);
+        
+        //ResponseEntity entity = ResponseEntity.ok(null);
+        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
 
         String response = "testing response - " + new Date() + "\n" + entity.toString();
         LOG.log(Level.INFO, response);

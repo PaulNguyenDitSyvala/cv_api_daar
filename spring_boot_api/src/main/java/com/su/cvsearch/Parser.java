@@ -29,7 +29,8 @@ public class Parser {
 	private String inputFile;
 	private String inputFullPath;
 	private final String outputDirectory = "../src/server/data/cv_json/";
-
+	private String content;
+	
 	// CONSTRUCTOR
 	public Parser(String file){
 		this.inputFile = file;
@@ -38,8 +39,9 @@ public class Parser {
 
 	// main method from PARSER
 	// takes a file and make a JSON with normalized and filtered content
-	public void makeJSON(){
-		createJSON(normalizeText(parsePDF()));
+	// return a String
+	public String makeJSON(){
+		return createJSON(normalizeText(parsePDF()));
 	}
 
 	// parse the pdf file to Java String
@@ -110,7 +112,8 @@ public class Parser {
 
 
 	// create a JSON file with the filename and content
-	public void createJSON(String content){
+	public String createJSON(String content){
+		this.content = content;
 		StringBuilder sb = new StringBuilder(100);
 
 		sb.append("{\n");
@@ -137,6 +140,8 @@ public class Parser {
 			System.out.println("An error occurred.");
 			e.printStackTrace();
 		}
+
+		return sb.toString();
 	}
 
 
@@ -144,6 +149,12 @@ public class Parser {
 	public void setNewFile(String file){
 		this.inputFile = file;
 		this.inputFullPath = (this.inputDirectory + this.inputFile);
+		this.content = "";
+	}
+	
+	//getter for content
+	public String getContent(){
+		return this.content;
 	}
 
 
