@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMethod; 
 import org.springframework.web.bind.annotation.RequestBody; 
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -26,7 +28,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.nio.file.Path;
 
 // rest Api layer
 @CrossOrigin(origins = "http://localhost:6058/", allowedHeaders = "*", maxAge = 3600)
@@ -43,8 +48,25 @@ public class CvRessource {
     
 //    @CrossOrigin(origins = "http://localhost:6058/", allowedHeaders = "*", maxAge = 3600)
     @RequestMapping(value = "/cv", method = RequestMethod.POST)
-    public ResponseEntity<Cv> save(@RequestBody Cv newCv) {
-        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
+    public ResponseEntity<Cv> save(@RequestPart MultipartFile cv) {
+        String filename = cv.getOriginalFilename();
+
+        String logMessage = "testing PDF reception - " + new Date() + "\n" + filename;
+        LOG.log(Level.INFO, logMessage);
+
+    	Path p = Paths.get("../src/server/data/cv/"+filename);
+    	try{
+    		cv.transferTo(p);
+    	}
+    	catch(IOException e){
+    		String ErrorMessage = "ERROR - " + new Date() + "\n" + e.toString();
+        	LOG.log(Level.INFO, ErrorMessage);
+    	}
+	
+		
+
+        ResponseEntity entity = ResponseEntity.ok(null);
+//        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
 
         String response = "testing response - " + new Date() + "\n" + entity.toString();
         LOG.log(Level.INFO, response);
