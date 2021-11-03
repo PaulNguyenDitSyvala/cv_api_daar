@@ -18,6 +18,6 @@ vue create hello-world
 
 ### Running the project
 ```
-vue serve
+npm run serve
 ```
 

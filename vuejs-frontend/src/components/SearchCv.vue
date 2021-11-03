@@ -7,10 +7,26 @@
     <div class="card-body"> input : {{input}}</div>
     <button v-on:click="search">search matching CVs in ElasticSearch</button>
     <div v-if="result !=''">
-      <div class="card-body">Number of matches : {{nbMatches}}</div>
-        <div v-for="(cv, index) in result" :key=index >
-          <div class="card-body">{{index + 1}} - {{cv.filename}} : {{cv.content}}</div> 
-        </div>
+    
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">Number of matches : {{nbMatches}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td> N° | Filename| Content</td>
+          </tr>
+          <div v-for="(cv, index) in result" :key=index >
+            <tr>
+              <td width=20>{{index + 1}}</td>
+              <td width=100>{{cv.filename}}</td>
+              <td>{{cv.content}}</td>
+            </tr>
+          </div>
+        </tbody>
+      </table>
     </div>
     <div v-if="errorMessage != 'No error'">
       <div class="card-body">Error message: {{errorMessage}}</div>
@@ -65,3 +81,13 @@ export default {
 };
 </script>
 
+<style>
+#app tbody{
+  background-color: #111111;
+}
+#app td{
+  background-color: #ffffff;
+  text-align: left;
+}
+
+</style>
