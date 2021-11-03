@@ -1,7 +1,7 @@
-# cv_api_daar
+# cv_api_daar #
 University project - CV indexation in ElasticSearch using Spring boot rest API
 
-**Binôme**
+# Binôme #
 
 Paul NGUYEN DIT SYVALA
 3876651
@@ -12,27 +12,36 @@ Thibault ROCHE
 thibault.roche.1@etu.sorbonne-universite.fr
 
 
-**Prérequis d'installation**
+# Prérequis d'installation #
+
+### PARSER ###
+
 Le parser qui récolte les informations des CV requiert le package java suivant:
 tika-app-2.1.0.jar
 
-Téléchargeable ici : https://tika.apache.org/download.html
+Téléchargeable ici : https://www.apache.org/dyn/closer.lua/tika/2.1.0/tika-app-2.1.0.jar
 
 Il faut ensuite placer cette archive .jar dans
 cv_api_daar/src/
 
-la JVM 11 au minimum est requise:
-sudo apt install openjdk-11-jdk
 
+### JVM ###
+la JVM 11 au minimum est requise:
+   sudo apt install openjdk-11-jdk
+
+
+### CURL ###
 curl pour peupler la base de données des CV dans elasticsearch
- sudo apt install curl
+   sudo apt install curl
 (vérifier la version avec curl --version)
 
+### MAVEN ###
 maven pour compiler l'API springboot
-sudo apt install maven
+   sudo apt install maven
 (vérifier la version avec mvn -version)
 
-**Lancement de tout le projet par script**
+
+# Lancement du projet par script (préférable) #
 
 1) ouvrir le terminal principal dans le root du projet `/cv_api_daar/`
 
@@ -53,22 +62,24 @@ sudo apt install maven
 7) Le script va ensuite importer les CV présents dans le dossier
 
 
-**Pour lancer une instance ElasticSearch :**
+# Lancement du projet manuellement : module par module (alternative au script) #
+
+### Pour lancer une instance ElasticSearch : ###
 
 `sudo docker-compose up elasticsearch`
 
 
-**Pour lancer l'API Spring Boot :**
+### Pour lancer l'API Spring Boot : ###
 
 `java -jar spring_boot_api/target/cv-search-0.0.1-SNAPSHOT.jar`
 
 
-**Pour lancer le front end :**
+### Pour lancer le front end : ###
 
 
 
 
-**Pour supprimer les données de l'instance ElasticSearch :**
+### Pour supprimer les données de l'instance ElasticSearch : ###
 
 `sudo docker-compose down`
 
