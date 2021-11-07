@@ -8,6 +8,12 @@ echo "- Press enter once the elasticsearch container is launched"
 read -r a
 echo ""
 
+#packaging springboot API
+echo "Packaging springboot API : \n"
+cd spring_boot_api
+mvn package
+cd ..
+
 #running springboot API
 echo "Launching springboot API : "
 gnome-terminal --geometry 80x22+750+100 -- /bin/sh -c 'java -jar ./spring_boot_api/target/cv-search-0.0.1-SNAPSHOT.jar'
