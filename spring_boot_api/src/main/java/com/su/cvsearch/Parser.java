@@ -25,10 +25,10 @@ public class Parser {
 
 
 	// VARIABLES
-	private final String inputDirectory = "../src/server/data/cv/";
+	private final String inputDirectory = "../../../../../../../server/data/cv/";
 	private String inputFile;
 	private String inputFullPath;
-	private final String outputDirectory = "../src/server/data/cv_json/";
+	private final String outputDirectory = "../../../../../../../server/data/cv_json/";
 	private String content;
 	
 	// CONSTRUCTOR
