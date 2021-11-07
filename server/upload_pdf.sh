@@ -4,7 +4,7 @@ for file in *.pdf; do
   name="${file%.pdf}"
   cd ../..
   echo "sending '$file' to elasticsearch..."
-  reply=$(curl -X POST "http://localhost:8080/api/cv" --form cv=@/data/cv/$file)
+  reply=$(curl -s -X POST "http://localhost:8080/api/cv" --form cv=@data/cv/$file)
   #echo "reply : $reply"
   cd ./data/cv
   echo "PDF file sent to elasticsearch :"$file
