@@ -54,7 +54,7 @@ public class CvRessource {
       String logMessage = "testing PDF reception - " + new Date() + "\n" + filename;
       LOG.log(Level.INFO, logMessage);
 
-    	Path p = Paths.get("../../../../../../../server/data/cv/"+filename);
+    	Path p = Paths.get("./server/data/cv/"+filename);
     	try{
     		cv.transferTo(p);
     	}
