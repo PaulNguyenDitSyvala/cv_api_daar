@@ -93,7 +93,7 @@ export default {
     },
   }
 </script>
-<!-- SASS styling -->
+<!-- SASS styling 
 <style lang="scss">
   .dropbox {
     outline: 2px dashed grey; 
@@ -123,4 +123,4 @@ export default {
     text-align: center;
     padding: 50px 0;
   }
-</style>
+</style>-->

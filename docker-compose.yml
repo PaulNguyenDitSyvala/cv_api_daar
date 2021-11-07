@@ -48,9 +48,7 @@ services:
       - elastic
     ports:
       - 6058:6058
-    volumes:
-      - ./vuejs-frontend:/usr/src/app/
-    command: npm run serve
+    command: bash -c "npm run serve"
 
 volumes:
   data01:
