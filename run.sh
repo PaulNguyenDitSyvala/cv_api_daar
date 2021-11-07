@@ -6,7 +6,7 @@ echo "Launching Docker containers requires sudo privileges."
 echo "Please enter password when prompted"
 echo ""
 echo "Launching elasticsearch container using Docker :"
-sudo gnome-terminal --geometry 80x22+1000+0 -- /bin/sh -c 'sudo docker-compose down; sudo docker volume rm cv_api_daar_data01; sudo docker-compose up elasticsearch'
+sudo gnome-terminal --geometry 80x22+1000+0 -- /bin/sh -c 'sudo docker-compose down; sudo docker-compose up elasticsearch'
 echo "- Wait for the elasticsearch container to be launched"
 echo ""
 echo "(The terminal will display a message of this format : "
