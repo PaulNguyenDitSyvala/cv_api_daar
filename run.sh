@@ -6,7 +6,7 @@ echo "Launching Docker containers requires sudo privileges."
 echo "Please enter password when prompted"
 echo ""
 echo "Launching elasticsearch container using Docker :"
-sudo gnome-terminal --geometry 80x22+1100+0 -- /bin/sh -c 'sudo docker-compose down; sudo docker-compose up elasticsearch'
+sudo gnome-terminal --geometry 80x22+1000+0 -- /bin/sh -c 'sudo docker-compose down; sudo docker volume rm cv_api_daar_data01; sudo docker-compose up elasticsearch'
 echo "- Wait for the elasticsearch container to be launched"
 echo ""
 echo "(The terminal will display a message of this format : "
@@ -25,7 +25,7 @@ cd ..
 
 #running springboot API
 echo "Launching springboot API : "
-gnome-terminal --geometry 80x22+1150+100 -- /bin/sh -c 'java -jar ./spring_boot_api/target/cv-search-0.0.1-SNAPSHOT.jar'
+gnome-terminal --geometry 80x22+1050+100 -- /bin/sh -c 'java -jar ./spring_boot_api/target/cv-search-0.0.1-SNAPSHOT.jar'
 echo "- Wait for the springboot api to be launched"
 echo ""
 echo "(The terminal will display a message of this format : "
@@ -51,7 +51,7 @@ cd ./server
 #running front-end application to search CVs and upload more CVs using Docker
 cd ..
 echo "Launching Front-end container using Docker :"
-sudo gnome-terminal --geometry 80x22+1200+150 -- /bin/sh -c 'sudo docker-compose up --build vue'
+sudo gnome-terminal --geometry 80x22+1100+150 -- /bin/sh -c 'sudo docker-compose up --build vue'
 echo "- Wait for the front-end container to be launched"
 echo ""
 echo "(The terminal will display a message of this format : "
@@ -71,7 +71,7 @@ echo ""
 
 #running Kibana
 echo "Launching Kibana container using Docker :"
-sudo gnome-terminal --geometry 80x22+1250+200 -- /bin/sh -c 'sudo docker-compose up kibana'
+sudo gnome-terminal --geometry 80x22+1150+200 -- /bin/sh -c 'sudo docker-compose up kibana'
 echo "- Wait for the Kibana container to be launched"
 echo ""
 echo "(The terminal will display a message of this format : "

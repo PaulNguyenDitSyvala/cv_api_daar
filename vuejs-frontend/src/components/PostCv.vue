@@ -1,9 +1,9 @@
 <template>
   <div class="card text-center m-3">
-    <h4 class="card-header">POST Request for sending CV</h4>
+    <h2 class="card-header">POST Request for sending CV</h2>
     <div class="container">
         <div class="dropbox">
-          <h1> upload your cv </h1>
+          <h4> upload your cv </h4>
           <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
              class="input-file">
             <p v-if="isInitial">

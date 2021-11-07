@@ -1,8 +1,8 @@
 <template>
   <div class="card text-center m-3">
-    <h4 class="card-header">GET Request for searching in the CV Database</h4>
+    <h2 class="card-header">GET Request for searching in the CV Database</h2>
    
-    <h5>Select a input</h5>
+    <h4>Select a input</h4>
     <input type="text" @change="onInputChange">
     <div class="card-body"> input : {{input}}</div>
     <button v-on:click="search">search matching CVs in ElasticSearch</button>
