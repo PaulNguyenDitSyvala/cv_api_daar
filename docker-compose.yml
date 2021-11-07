@@ -48,12 +48,14 @@ services:
       - elastic
     ports:
       - 6058:6058
+    volumes:
+      - ./vuejs-frontend:/usr/src/app/
     command: npm run serve
 
 volumes:
   data01:
-    driver: local
-    
+    driver: local 
+
 networks:
   elastic:
     driver: bridge

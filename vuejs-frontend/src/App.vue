@@ -1,19 +1,17 @@
 <template>
-  <!--<img alt="Vue logo" src="./assets/logo.png">-->
-  <HelloWorld msg="CV search indexed using ElasticSearch"/>
+  <h1>CV search indexed using ElasticSearch aaa</h1>
   <post-cv/>
   <search-cv/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 import PostCv from './components/PostCv.vue'
 import SearchCv from './components/SearchCv.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     PostCv,
     SearchCv
   }

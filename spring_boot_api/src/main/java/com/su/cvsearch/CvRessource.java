@@ -66,11 +66,10 @@ public class CvRessource {
 	      LOG.error("ERROR - " + new Date() + "\n" + stackTrace);
     	}
 	
-	    Parser parser = new Parser("");
-	    parser.setNewFile(filename);
-	    String s = parser.makeJSON();
-	    String content = parser.getContent();
-	    Cv newCv = new Cv(filename, content);
+      Parser parser = new Parser(filename);
+      String s = parser.makeJSON();
+      String content = parser.getContent();
+      Cv newCv = new Cv(filename, content);
       String testString = "testing response - " + new Date() + "\n" + newCv;
       LOG.log(Level.INFO, testString);
       
