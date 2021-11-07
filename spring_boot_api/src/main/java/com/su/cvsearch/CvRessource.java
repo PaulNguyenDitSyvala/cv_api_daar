@@ -49,34 +49,37 @@ public class CvRessource {
 //    @CrossOrigin(origins = "http://localhost:6058/", allowedHeaders = "*", maxAge = 3600)
     @RequestMapping(value = "/cv", method = RequestMethod.POST)
     public ResponseEntity<Cv> save(@RequestPart MultipartFile cv) {
-        String filename = cv.getOriginalFilename();
+      String filename = cv.getOriginalFilename();
 
-        String logMessage = "testing PDF reception - " + new Date() + "\n" + filename;
-        LOG.log(Level.INFO, logMessage);
+      String logMessage = "testing PDF reception - " + new Date() + "\n" + filename;
+      LOG.log(Level.INFO, logMessage);
 
     	Path p = Paths.get("../src/server/data/cv/"+filename);
     	try{
     		cv.transferTo(p);
     	}
     	catch(IOException e){
-    		String ErrorMessage = "ERROR - " + new Date() + "\n" + e.toString();
-        	LOG.log(Level.INFO, ErrorMessage);
+    		StringWriter sw = new StringWriter();
+	      PrintWriter pw = new PrintWriter(sw);
+	      e.printStackTrace(pw);
+	      String stackTrace = sw.toString();
+	      LOG.error("ERROR - " + new Date() + "\n" + stackTrace);
     	}
 	
-	Parser parser = new Parser("");
-	parser.setNewFile(filename);
-	String s = parser.makeJSON();
-	String content = parser.getContent();
-	Cv newCv = new Cv(filename, content);
-        String testString = "testing response - " + new Date() + "\n" + newCv;
-        LOG.log(Level.INFO, testString);
-        
-        //ResponseEntity entity = ResponseEntity.ok(null);
-        ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
+	    Parser parser = new Parser("");
+	    parser.setNewFile(filename);
+	    String s = parser.makeJSON();
+	    String content = parser.getContent();
+	    Cv newCv = new Cv(filename, content);
+      String testString = "testing response - " + new Date() + "\n" + newCv;
+      LOG.log(Level.INFO, testString);
+      
+      //ResponseEntity entity = ResponseEntity.ok(null);
+      ResponseEntity entity = ResponseEntity.ok(cvService.save(newCv));
 
-        String response = "testing response - " + new Date() + "\n" + entity.toString();
-        LOG.log(Level.INFO, response);
-        return entity; 
+      String response = "testing response - " + new Date() + "\n" + entity.toString();
+      LOG.log(Level.INFO, response);
+      return entity; 
     }
     
   //  @CrossOrigin(origins = "http://localhost:6058/", allowedHeaders = "*", maxAge = 3600)
@@ -108,11 +111,7 @@ public class CvRessource {
 			throw new Exception("Exception has occured....");
 		} catch (Exception e) {
             LOG.error(e);
-		    StringWriter sw = new StringWriter();
-		    PrintWriter pw = new PrintWriter(sw);
-		    e.printStackTrace(pw);
-		    String stackTrace = sw.toString();
-		    LOG.error("Exception - " + stackTrace);
+		    
 		}
         return ResponseEntity.ok(cvService.count());
     }

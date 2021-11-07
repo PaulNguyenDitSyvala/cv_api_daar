@@ -18,7 +18,7 @@ echo ""
 #running script to import CVs into elasticsearch
 echo "Importing CVs into elasticsearch : "
 cd ./src/server
-./upload.sh
+./upload_pdf.sh
 
 #running front-end application to search CVs and upload more CVs
 #cd ../..
