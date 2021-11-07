@@ -1,4 +1,4 @@
-echo "Sending all CV to elasticsearch"
+echo "Sending .pdf CV to elasticsearch"
 cd ./data/cv
 for file in *.pdf; do
   name="${file%.pdf}"
@@ -13,6 +13,7 @@ for file in *.pdf; do
   echo ""
 done
 
+echo "Sending .odt CV to elasticsearch"
 for file in *.odt; do
   name="${file%.odt}"
   cd ../..

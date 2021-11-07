@@ -1,14 +1,19 @@
 # cv_api_daar #
+
 University project - CV indexation in ElasticSearch using Spring boot rest API
 
 # Binôme #
 
 Paul NGUYEN DIT SYVALA
+
 3876651
+
 `paul.nguyen_dit_syvala@etu.sorbonne-universite.fr`
 
 Thibault ROCHE
+
 3677376
+
 `thibault.roche.1@etu.sorbonne-universite.fr`
 
 
@@ -19,6 +24,7 @@ Par la biais d'une page internet:
 - l'utilisateur peut upload un CV aux de formats .pdf et .odt (open document)
 
 - l'utilisateur peut entrer un(/des) mots clefs pour effectuer une recherche sur la base de donnée de CVs
+
 
 
 # Architecture conçise du programme #
@@ -32,26 +38,40 @@ Par la biais d'une page internet:
 - les CVs uploadés sont stockés en plus d'elastic search, dans ./server/data/ sous format brut dans data/cv/ et sous format .json dans data/cv_json/
 
 
+
 # Prérequis d'installation #
 
 ### Docker ###
+
 Docker et docker-compose sont requis pour lancer l'instance elasticsearch, la console kibana et le front-end vue-JS permettant d'intéragir avec l'API.
+
    https://docs.docker.com/engine/install/ubuntu/
+
    https://docs.docker.com/compose/install/
 
 ### JVM ###
+
 la JVM 11 au minimum est requise:
+
    sudo apt install openjdk-11-jdk
 
 ### CURL ###
+
 curl pour peupler la base de données des CV dans elasticsearch
+
    sudo apt install curl
+
 (vérifier la version avec curl --version)
 
 ### MAVEN ###
+
 maven pour compiler l'API springboot
+
    sudo apt install maven
+
 (vérifier la version avec mvn -version)
+
+
 
 
 # Lancement du projet par script (préférable) #
@@ -86,6 +106,11 @@ maven pour compiler l'API springboot
    - Une fenêtre de navigation internet sur la page localhost:5601 s'ouvre
    - La console kibana est prête et permet d'intéragir avec le contenu d'elasticsearch
    
+
+
+
+
+
 # Lancement du projet manuellement : module par module (alternative au script) #
 
 ### Pour lancer une instance ElasticSearch : ###
@@ -96,8 +121,11 @@ maven pour compiler l'API springboot
 ### Pour lancer l'API Spring Boot : ###
 
 `cd spring_boot_api`
+
 `mvn package`
+
 `cd ..`
+
 `java -jar spring_boot_api/target/cv-search-0.0.1-SNAPSHOT.jar`
 
 
@@ -108,6 +136,7 @@ maven pour compiler l'API springboot
 ### Pour lancer le front end sans docker (apres installation de nodejs, npm, vue) : ###
 
 `cd vuejs-frontend`
+
 `npm run serve`
 
 ### Pour lancer la console Kibana : ###
@@ -120,17 +149,21 @@ maven pour compiler l'API springboot
 
 `sudo docker volume rm cv_api_daar_data01`
 
-### visualisation ###
+
+
+
+
+# Visualisation #
 
 Pour le front-end : 
 
-http://localhost:6058
+`http://localhost:6058`
 
 Pour la console Kibana : 
 
-http://localhost:5601
+`http://localhost:5601`
 
-### exemples de requetes dans Kibana Dev Tools ###
+### Exemples de requetes dans Kibana Dev Tools ###
 
 Voir le contenu de l'instance elasticsearch :
 
@@ -176,11 +209,18 @@ compter le nombre d'instances de CV :
 
 GET /cv/_count/
 
-# dépendances gérées par maven #
+
+
+
+
+
+# Note pour futur développement #
 
 **L'utilisateur ne doit pas prendre cette section en compte.**
 
-### PARSER (pour utilisation stadalone avec programme java)###
+**dépendances gérées par maven**
+
+### PARSER (pour utilisation standalone avec programme java) ###
 
 Le parser qui récolte les informations des CV à partir des formats .pdf et .odt requiert le package java suivant:
 

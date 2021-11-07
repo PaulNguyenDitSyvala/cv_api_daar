@@ -39,13 +39,7 @@ echo ""
 echo "Importing CVs into elasticsearch : "
 echo ""
 cd ./server
-./upload_pdf.sh
-
-#running front-end application to search CVs and upload more CVs
-#cd ../..
-#cd vuejs-frontend
-#gnome-terminal --geometry 80x22+400+0 -- /bin/sh -c 'npm run serve'
-#xdg-open "http://localhost:6058" &
+./upload_cvs.sh
 
 
 #running front-end application to search CVs and upload more CVs using Docker
@@ -64,10 +58,6 @@ read -r a
 echo "Opening http://localhost:6058 on web browser" 
 xdg-open "http://localhost:6058" &
 echo ""
-
-#cd vuejs-frontend
-#gnome-terminal --geometry 80x22+400+0 -- /bin/sh -c 'npm run serve'
-#xdg-open "http://localhost:6058" &
 
 #running Kibana
 echo "Launching Kibana container using Docker :"
