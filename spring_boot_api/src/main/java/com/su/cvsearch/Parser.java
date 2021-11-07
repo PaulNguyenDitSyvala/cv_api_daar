@@ -7,6 +7,7 @@ import java.io.FileInputStream;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
 import org.apache.tika.parser.pdf.PDFParser;
+import org.apache.tika.parser.odf.OpenDocumentParser;
 import org.apache.tika.sax.BodyContentHandler;
 
 import java.lang.StringBuilder;	
@@ -41,7 +42,22 @@ public class Parser {
 	// takes a file and make a JSON with normalized and filtered content
 	// return a String
 	public String makeJSON(){
-		return createJSON(normalizeText(parsePDF()));
+		return createJSON(normalizeText(parseFile()));
+	}
+
+	// parse the file with corresponding parser
+	public String parseFile(){
+		String regexPDF = ".*.pdf$";
+		String regexOpenDocument = ".*.odt$";
+
+		if (this.inputFile.matches(regexPDF)){
+			return parsePDF();
+		}
+		if (this.inputFile.matches(regexOpenDocument)){
+			return parseOpenDocument();
+		}
+		System.out.print("ERROR (in Parser.java): unrecognized file type to parse.");
+		return null;
 	}
 
 	// parse the pdf file to Java String
@@ -63,6 +79,35 @@ public class Parser {
 
 			// PDF document can be parsed using the PDFparser
 			PDFParser pdfparser = new PDFParser();
+			pdfparser.parse(fstream, contenthandler, data,
+							context);
+			return contenthandler.toString();
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	// parse the OpenDocument file to Java String
+	public String parseOpenDocument(){
+		try{
+			BodyContentHandler contenthandler
+				= new BodyContentHandler();
+			if (verbose) System.out.println(inputFullPath);
+			
+			// create file input stream
+			File f = new File(inputFullPath);
+			FileInputStream fstream = new FileInputStream(f);
+
+			// Create an object of type Metadata to use
+			Metadata data = new Metadata();
+
+			// Create a context parser for the pdf document
+			ParseContext context = new ParseContext();
+
+			// Open document can be parsed using the OpenDocumentParser
+			OpenDocumentParser pdfparser = new OpenDocumentParser();
 			pdfparser.parse(fstream, contenthandler, data,
 							context);
 			return contenthandler.toString();
