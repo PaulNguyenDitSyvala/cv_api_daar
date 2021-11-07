@@ -120,7 +120,61 @@ maven pour compiler l'API springboot
 
 `sudo docker volume rm cv_api_daar_data01`
 
+### visualisation ###
 
+Pour le front-end : 
+
+http://localhost:6058
+
+Pour la console Kibana : 
+
+http://localhost:5601
+
+### exemples de requetes dans Kibana Dev Tools ###
+
+Voir le contenu de l'instance elasticsearch :
+
+GET /cv/_search/
+{
+  "query": {
+    "match_all": { }
+  }
+}
+
+Lancer une recherche de mots clés sur le contenu des CV :
+(equivalent à la requête faite par l'API)
+
+GET /cv/_search/
+{
+  "query": {
+    "bool": {
+      "must": [{
+        "match": {
+          "content": "java"
+        }
+      }]
+    }
+  }
+}
+
+Lancer une recherche par nom de fichier sur les CV :
+
+GET /cv/_search/
+{
+  "query": {
+    "bool": {
+      "must": [{
+        "term": {
+          "filename": "cv_gordon_freeman.odt"
+        }
+      }]
+    }
+  }
+}
+
+compter le nombre d'instances de CV :
+
+GET /cv/_count/
 
 # dépendances gérées par maven #
 

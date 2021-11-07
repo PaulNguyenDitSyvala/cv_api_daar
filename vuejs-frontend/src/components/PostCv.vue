@@ -4,11 +4,12 @@
     <div class="container">
         <div class="dropbox">
           <h4> upload your cv </h4>
-          <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
-             class="input-file">
+          <input type="file" multiple :name="uploadFieldName" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length" class="input-file">
+            <!--
             <p v-if="isInitial">
               Drag your file(s) here to begin<br> or click to browse
             </p>
+            -->
             <p v-if="isSaving">
               Uploading {{ fileCount }} files...
             </p>
